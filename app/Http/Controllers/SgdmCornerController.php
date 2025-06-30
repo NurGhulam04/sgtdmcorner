@@ -9,10 +9,7 @@ use App\Models\Article;
 
 class SgdmCornerController extends Controller
 {
-    /**
-     * Menampilkan halaman utama dengan form pencarian
-     * atau menampilkan dashboard berdasarkan nama yang dicari.
-     */
+
     public function index(Request $request)
     {
         $articles = Article::all();

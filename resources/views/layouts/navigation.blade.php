@@ -15,6 +15,21 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('pendahuluan')" :active="request()->routeIs('pendahuluan') || request()->routeIs('pendahuluan')">
+                        {{ __('Pendahuluan') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('video')" :active="request()->routeIs('video')">
+                        {{ __('Video Edukasi') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('laporan-aktivitas.index')" :active="request()->routeIs('laporan-aktivitas.*')">
+                        {{ __('Laporan Aktivitas') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('laporan-gula-darah.index')" :active="request()->routeIs('laporan-gula-darah.*')">
+                        {{ __('Pemeriksaan Gula Darah') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('artikel')" :active="request()->routeIs('artikel')">
+                        {{ __('Artikel') }}
+                    </x-nav-link>
                 </div>
             </div>
 

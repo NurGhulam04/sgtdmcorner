@@ -46,4 +46,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function activityReports() {
+        return $this->hasMany(ActivityReport::class);
+    }
+
+    public function bloodSugarReports() {
+        return $this->hasMany(BloodSugarReport::class);
+    }
 }
