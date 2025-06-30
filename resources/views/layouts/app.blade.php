@@ -31,7 +31,8 @@
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="/pendahuluan" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Pengertian</a>
                         <a href="/video" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Video</a>
-                        <a href="/laporan" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Laporan</a>
+                        <a href="/laporan-aktivitas" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Laporan Aktivitas</a>
+                        <a href="/laporan-gula-darah" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Laporan Gula Darah</a>
                         <a href="/artikel" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300">Artikel</a>
                     </div>
                 </div>
