@@ -24,32 +24,32 @@ class DashboardController extends Controller
         // Kita definisikan data sebagai array langsung di dalam method.
         $videos = [
             [
-                'judul' => '1. Pengetahuan tentang DM',
-                'youtube_embed_url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
+                'judul' => 'Pengetahuan tentang DM',
+                'url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
             ],
             [
-                'judul' => '2. Spiritual Group Therapy',
-                'youtube_embed_url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
+                'judul' => 'Spiritual Group Therapy',
+                'url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
             ],
             [
-                'judul' => '3. Ergonomic Exercise based Spiritual Care',
-                'youtube_embed_url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
+                'judul' => 'Ergonomic Exercise based Spiritual Care',
+                'url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
             ],
             [
-                'judul' => '4. Buerger Allen Exercise',
-                'youtube_embed_url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
+                'judul' => 'Buerger Allen Exercise',
+                'url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
             ],
             [
-                'judul' => '5. Mindfulness Meditation based Spiritual Care',
-                'youtube_embed_url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
+                'judul' => 'Mindfulness Meditation based Spiritual Care',
+                'url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
             ],
             [
-                'judul' => '6. Pemberian Aromatherapy',
-                'youtube_embed_url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
+                'judul' => 'Pemberian Aromatherapy',
+                'url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
             ],
             [
-                'judul' => '7. Diabetic Foot Spa',
-                'youtube_embed_url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
+                'judul' => 'Diabetic Foot Spa',
+                'url' => 'https://www.youtube.com/embed/videoseries?list=PLm2915h3a_Rix9O9i4l22Kw_26gScumJd' // Ganti dengan URL embed asli
             ],
         ];
 

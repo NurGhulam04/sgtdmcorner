@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ActivityReportController;
+use App\Http\Controllers\BloodSugarReportController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -14,7 +17,7 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
 
     Route::get('/pendahuluan', [DashboardController::class, 'pendahuluan'])->name('pendahuluan');
-    Route::get('/video-edukasi', [DashboardController::class, 'video'])->name('video');
+    Route::get('/video', [DashboardController::class, 'video'])->name('video');
     Route::get('/artikel', [DashboardController::class, 'artikel'])->name('artikel');
 
     // Resourceful routes untuk laporan (CRUD)

@@ -5,8 +5,8 @@
         {{-- Logo --}}
         <div class="text-center">
             <a href="/">
-                <h1 class="text-5xl font-extrabold text-[#2274A5]">
-                    SDT GM<span class="bg-[#2274A5] text-white rounded-md px-2 py-1 text-4xl ml-1">Corner</span>
+                <h1 class="text-5xl font-extrabold text-[#A61819] ">
+                    SDT GM<span class="bg-[#A61819] self-auto text-white rounded-md px-2 py-1 text-4xl ml-1">Corner</span>
                 </h1>
             </a>
         </div>
@@ -52,7 +52,7 @@
 
             {{-- Tombol Masuk --}}
             <div>
-                 <button type="submit" class="w-full text-center bg-[#2274A5] hover:bg-yellow-500 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 mt-4">
+                 <button type="submit" class="w-full text-center bg-[#A61819] hover:bg-yellow-500 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 mt-4">
                     Masuk
                 </button>
             </div>
@@ -63,7 +63,7 @@
             <p class="text-sm text-black">
                 Belum punya akun?
                 {{-- Mengarahkan ke rute registrasi yang dibuat Breeze --}}
-                <a href="{{ route('register') }}" class="font-medium text-[#2274A5] hover:underline">
+                <a href="{{ route('register') }}" class="font-medium text-[#A61819] hover:underline">
                     Daftar
                 </a>
             </p>
