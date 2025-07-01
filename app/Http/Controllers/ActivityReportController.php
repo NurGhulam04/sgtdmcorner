@@ -12,7 +12,8 @@ class ActivityReportController extends Controller
     public function index()
     {
 
-        $activityReports = ActivityReport::where('user_id', Auth::id())
+        $activityReports = ActivityReport::with('user') // Eager load relasi 'user'
+                                        ->where('user_id', Auth::id())
                                         ->orderBy('tanggal', 'asc')
                                         ->get();
 

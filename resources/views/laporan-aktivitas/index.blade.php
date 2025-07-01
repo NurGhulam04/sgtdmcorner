@@ -86,6 +86,9 @@
                                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
                                             Tanggal
                                         </th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+                                            Umur
+                                        </th>
                                         <th scope="col" class="relative px-6 py-3">
                                             <span class="sr-only">Aksi</span>
                                         </th>
@@ -102,6 +105,9 @@
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700">
                                                 {{ $report->tanggal->format('d M Y') }}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-700">
+                                                {{ $report->umur_saat_aktivitas !== null ? $report->umur_saat_aktivitas . ' tahun' : '-' }}
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium space-x-2 ">
                                                 <div class="flex justify-end items-center space-x-2">
