@@ -30,19 +30,17 @@
                 <x-input-error :messages="$errors->get('name')" class="mt-2 text-red-400 text-sm" />
             </div>
 
-            <div>
-                <label for="umur" class="text-sm font-medium text-black block mb-2">Umur</label>
+           <div>
+                <label for="tgl_lahir" class="text-sm font-medium text-black block mb-2">Tanggal Lahir</label>
                 <x-text-input
-                    id="umur"
+                    id="tgl_lahir"
                     class="block mt-1 w-full px-4 py-3 bg-white/10 border-gray-600 rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition"
-                    type="number"
-                    name="umur"
-                    :value="old('umur')"
-                    placeholder="Masukkan Umur Anda"
+                    type="date"
+                    name="tgl_lahir"
+                    :value="old('tgl_lahir')"
                     required
-                    autofocus
-                    autocomplete="umur" />
-                <x-input-error :messages="$errors->get('umur')" class="mt-2 text-red-400 text-sm" />
+                    autocomplete="bday" />
+                <x-input-error :messages="$errors->get('tgl_lahir')" class="mt-2 text-red-400 text-sm" />
             </div>
 
 

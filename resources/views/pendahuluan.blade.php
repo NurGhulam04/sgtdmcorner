@@ -3,7 +3,7 @@
 @section('content')
 <div class="pt-16"> {{-- Padding untuk menghindari konten tertutup navbar --}}
 
-    <section class="py-20 bg-white">
+    <section class="py-20 ">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="pt-20 pb-16 bg-slate-50"> {{-- Memberi padding atas dan bawah --}}
+<div class="pt-20 pb-16"> {{-- Memberi padding atas dan bawah --}}
 
     <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

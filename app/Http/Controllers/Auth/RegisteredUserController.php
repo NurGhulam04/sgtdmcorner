@@ -31,14 +31,14 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'umur' => ['required', 'integer', 'min:1'],
+            'tgl_lahir' => ['required', 'date'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
-            'umur' => $request->umur,
+            'tgl_lahir' => $request->tgl_lahir,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
