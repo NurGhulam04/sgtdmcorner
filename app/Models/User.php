@@ -54,4 +54,5 @@ class User extends Authenticatable
     public function bloodSugarReports() {
         return $this->hasMany(BloodSugarReport::class);
     }
+
 }

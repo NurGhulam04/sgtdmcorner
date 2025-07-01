@@ -24,8 +24,17 @@
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
+            <x-input-label for="tgl_lahir" :value="__('Tanggal Lahir')" />
+            <x-text-input id="tgl_lahir" name="tgl_lahir" type="date" class="mt-1 block w-full" :value="old('tgl_lahir', $user->tgl_lahir ? $user->tgl_lahir->format('Y-m-d') : '')" required autocomplete="bday" />
+            <x-input-error class="mt-2" :messages="$errors->get('tgl_lahir')" />
+        </div>
+
+        <div>
+            <x-input-label for="email_display" :value="__('Email')" />
+            <x-text-input id="email_display" type="email" class="mt-1 block w-full bg-gray-100" :value="$user->email" disabled />
+            <input type="hidden" name="email" id="email" value="{{ $user->email }}">
+            <p class="mt-1 text-sm text-gray-500">Email tidak dapat diubah.</p>
+
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())

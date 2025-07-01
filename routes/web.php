@@ -10,12 +10,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
 
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/pendahuluan', [DashboardController::class, 'pendahuluan'])->name('pendahuluan');
     Route::get('/video', [DashboardController::class, 'video'])->name('video');
     Route::get('/artikel', [DashboardController::class, 'artikel'])->name('artikel');

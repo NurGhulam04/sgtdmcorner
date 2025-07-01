@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="pt-20 pb-16"> {{-- Memberi padding atas dan bawah --}}
+<div class="pt-20 pb-16">
 
     <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,18 +15,10 @@
             </div>
 
             <div class="max-w-4xl mx-auto space-y-4" x-data="{ open: 1 }">
-                {{--
-                    x-data="{ open: 1 }" -> Inisialisasi Alpine.js, item pertama akan terbuka secara default.
-                    Ganti '1' menjadi '0' jika ingin semua tertutup saat halaman dimuat.
-                --}}
                 @foreach ($videos as $index => $video)
                     <div class="rounded-xl border border-gray-200 overflow-hidden bg-[#E8E8DF] shadow-sm transition-all duration-300 hover:shadow-md">
                         <h2>
-                            {{--
-                                @click="open = (open === {{ $index + 1 }}) ? 0 : {{ $index + 1 }}"
-                                Logika Alpine.js: Jika item yang diklik sudah terbuka, tutup (set open = 0).
-                                Jika item lain yang diklik, buka item tersebut.
-                            --}}
+
                             <button
                                 type="button"
                                 class="flex items-center justify-between w-full p-5 font-semibold text-left text-slate-700"
@@ -44,9 +36,7 @@
                                 </svg>
                             </button>
                         </h2>
-                        {{--
-                            x-show="open === {{ $index + 1 }}" -> Tampilkan konten jika 'open' sama dengan nomor item ini.
-                        --}}
+
                         <div class="p-5 pt-0" x-show="open === {{ $index + 1 }}" x-collapse>
                             <div class="border-t border-gray-200 pt-5">
                                 <div class="aspect-w-16 aspect-h-9">

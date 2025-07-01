@@ -12,10 +12,10 @@ class ActivityReportController extends Controller
     public function index()
     {
 
-        $activityReports = ActivityReport::with('user') // Eager load relasi 'user'
+        $activityReports = ActivityReport::with('user')
                                         ->where('user_id', Auth::id())
-                                        ->orderBy('tanggal', 'asc')
-                                        ->get();
+                                        ->orderBy('tanggal', 'desc')
+                                        ->paginate(5);
 
         return view('laporan-aktivitas.index', compact('activityReports'));
     }

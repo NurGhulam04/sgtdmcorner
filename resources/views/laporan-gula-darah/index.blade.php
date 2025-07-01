@@ -23,8 +23,8 @@
             </div>
         @endif
 
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            <div class="lg:col-span-2">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1">
                 <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
                     <h2 class="text-2xl font-bold text-slate-800 mb-6">Input Hasil Baru</h2>
                     <form action="{{ route('laporan-gula-darah.store') }}" method="POST" class="space-y-6">
@@ -113,6 +113,9 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            <div class="mt-6">
+                                {{ $bloodSugarReports->links() }}
+                            </div>
                         @endif
                     </div>
                 </div>

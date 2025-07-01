@@ -2,26 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class DashboardController extends Controller
 {
     /**
      * Menampilkan halaman Pendahuluan.
      */
+    public function dashboard()
+    {
+
+        return view('dashboard');
+    }
     public function pendahuluan()
     {
         // View ini hanya akan menampilkan konten statis.
         return view('pendahuluan');
     }
 
-    /**
-     * Menampilkan halaman Video Edukasi dengan data hardcode.
-     */
+
     public function video()
     {
-        // DATA VIDEO HARDCODE DI SINI
-        // Kita definisikan data sebagai array langsung di dalam method.
+
         $videos = [
             [
                 'judul' => 'Pengetahuan tentang DM',

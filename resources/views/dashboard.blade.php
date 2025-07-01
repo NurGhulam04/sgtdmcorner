@@ -1,61 +1,84 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="pt-24 pb-16 bg-slate-50 min-h-screen">
 
-<div class="pt-16"> {{-- Padding untuk menghindari konten tertutup navbar --}}
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    @if (session('success'))
-        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 fixed top-20 right-5 z-50 rounded-md shadow-lg" role="alert">
-            <p class="font-bold">Sukses!</p>
-            <p>{{ session('success') }}</p>
-        </div>
-    @endif
-
-    <section id="pengertian" class="py-20 bg-gradient-to-br from-indigo-50 to-purple-100">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4 animate-fade-in-down">
-                Memahami Diabetes Melitus Gestasional
+        <div class="mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-800">
+                Selamat Datang, <span class="text-[#A61819]">{{ Auth::user()->name }}</span>!
             </h1>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto animate-fade-in-up">
-                DMG adalah kondisi diabetes yang muncul selama kehamilan. Dengan pemantauan dan gaya hidup yang tepat, Anda dan bayi dapat tetap sehat. Mari kelola bersama!
+            <p class="text-lg text-slate-600 mt-2">
+                Semoga sehat selalu. Apa yang ingin Anda lakukan hari ini?
             </p>
         </div>
-    </section>
 
-    <section id="laporan" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Laporan Harian Anda</h2>
-            </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        </div>
-
-    </section>
-
-    <section id="video" class="py-16 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Video Penjelasan</h2>
-                <p class="text-slate-500 mt-2">Tonton video singkat ini untuk pemahaman yang lebih baik.</p>
-            </div>
-            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
-                <div class="aspect-w-16 aspect-h-9">
-                    <iframe src="https://www.youtube.com/embed/n4a2-i2Le7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>
+            <a href="{{ route('laporan-aktivitas.index') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                 </div>
-            </div>
+                <h3 class="text-xl font-bold text-slate-800">Laporan Aktivitas</h3>
+                <p class="mt-2 text-slate-600">Catat dan lihat riwayat aktivitas fisik harian Anda.</p>
+            </a>
+
+            <a href="{{ route('laporan-gula-darah.index') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Cek Gula Darah</h3>
+                <p class="mt-2 text-slate-600">Input dan pantau hasil pemeriksaan kadar gula darah Anda.</p>
+            </a>
+
+            <a href="{{ route('video') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Video Edukasi</h3>
+                <p class="mt-2 text-slate-600">Tonton video informatif seputar pengelolaan diabetes.</p>
+            </a>
+
+            <a href="{{ route('artikel') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-100 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Artikel & Wawasan</h3>
+                <p class="mt-2 text-slate-600">Perluas pengetahuan Anda melalui artikel-artikel pilihan.</p>
+            </a>
+
+            <a href="{{ route('pendahuluan') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Pendahuluan</h3>
+                <p class="mt-2 text-slate-600">Cari tahu latar belakang website ini didirikan.</p>
+            </a>
+
+            <a href="{{ route('profile.edit') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Profil Saya</h3>
+                <p class="mt-2 text-slate-600">Kelola informasi akun, tanggal lahir, dan kata sandi Anda.</p>
+            </a>
+
         </div>
-    </section>
 
-    <section id="artikel" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold">Artikel & Wawasan</h2>
-                <p class="text-slate-500 mt-2">Perluas pengetahuan Anda dengan artikel kami.</p>
-            </div>
-
-
-        </div>
-    </section>
-
+    </div>
 </div>
 @endsection

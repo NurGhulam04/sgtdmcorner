@@ -15,9 +15,9 @@ class BloodSugarReportController extends Controller
     {
         $bloodSugarReports = BloodSugarReport::with('user')
                                             ->where('user_id', Auth::id())
-                                            ->orderBy('tanggal_pemeriksaan', 'asc')
-                                            ->orderBy('jam_pemeriksaan', 'asc')
-                                            ->get();
+                                            ->orderBy('tanggal_pemeriksaan', 'desc')
+                                            ->orderBy('jam_pemeriksaan', 'desc')
+                                            ->paginate(5);
 
         return view('laporan-gula-darah.index', compact('bloodSugarReports'));
     }
