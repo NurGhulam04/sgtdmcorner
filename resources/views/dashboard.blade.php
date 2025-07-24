@@ -1,20 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="pt-24 pb-16 bg-slate-50 min-h-screen">
+
+<div class="pt-[60px] pb-16 bg-slate-50 min-h-screen">
+    <section class="relative bg-cover bg-center h-64 sm:h-64 md:h-[400px]  shadow-lg overflow-hidden mb-12" style="background-image: url('{{ asset('images/dashboard-bg0.png') }}');">            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+            <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4">
+                <h1 class="text-3xl md:text-5xl font-bold">
+                    Selamat Datang, di web DM kami!
+                </h1>
+                <p class="text-lg mt-2 max-w-2xl">
+                    Semoga sehat selalu. Apa yang ingin Anda lakukan hari ini?
+                </p>
+            </div>
+        </section>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-slate-800">
-                Selamat Datang, <span class="text-[#A61819]">{{ Auth::user()->name }}</span>!
-            </h1>
-            <p class="text-lg text-slate-600 mt-2">
-                Semoga sehat selalu. Apa yang ingin Anda lakukan hari ini?
-            </p>
-        </div>
-
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <a href="{{ route('pendahuluan') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800">Pendahuluan</h3>
+                <p class="mt-2 text-slate-600">Cari tahu latar belakang website ini didirikan.</p>
+            </a>
 
             <a href="{{ route('laporan-aktivitas.index') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                 <div class="flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-6">
@@ -55,16 +68,6 @@
                 </div>
                 <h3 class="text-xl font-bold text-slate-800">Artikel & Wawasan</h3>
                 <p class="mt-2 text-slate-600">Perluas pengetahuan Anda melalui artikel-artikel pilihan.</p>
-            </a>
-
-            <a href="{{ route('pendahuluan') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-slate-800">Pendahuluan</h3>
-                <p class="mt-2 text-slate-600">Cari tahu latar belakang website ini didirikan.</p>
             </a>
 
             <a href="{{ route('profile.edit') }}" class="block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">

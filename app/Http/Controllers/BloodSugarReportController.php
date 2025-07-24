@@ -18,8 +18,21 @@ class BloodSugarReportController extends Controller
                                             ->orderBy('tanggal_pemeriksaan', 'desc')
                                             ->orderBy('jam_pemeriksaan', 'desc')
                                             ->paginate(5);
+        $chartLabels = $bloodSugarReports->pluck('tanggal_pemeriksaan')->map(function ($date) {
+            return $date->format('d M Y');
+        });
 
-        return view('laporan-gula-darah.index', compact('bloodSugarReports'));
+        $chartReports = BloodSugarReport::where('user_id', Auth::id())
+                                        ->orderBy('tanggal_pemeriksaan', 'asc')
+                                        ->orderBy('jam_pemeriksaan', 'asc')
+                                        ->get();
+
+        $chartLabels = $chartReports->pluck('tanggal_pemeriksaan')->map(function ($date) {
+            return $date->format('d M Y');
+        });
+        $chartData = $chartReports->pluck('hasil_gula_darah');
+
+        return view('laporan-gula-darah.index', compact('bloodSugarReports', 'chartLabels', 'chartData'));
     }
 
     /**

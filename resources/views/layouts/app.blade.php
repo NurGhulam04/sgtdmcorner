@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGDM Corner</title>
+    <title>SGT DM Corner</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -18,23 +18,30 @@
     </style>
 </head>
 <body class="bg-[#E9F1F7] text-slate-800">
-
-    {{-- GANTI SELURUH BAGIAN NAVIGASI DARI <nav> SAMPAI </nav> --}}
     <nav x-data="{ open: false }" class="bg-[#E8E8DF] backdrop-blur-lg shadow-sm fixed top-0 left-0 right-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+            <div class="flex items-center justify-between h-20">
 
                 <div class="flex-shrink-0">
-                    <a href="{{ route('dashboard') }}" class="text-2xl font-bold text-[#A61819]">SGT DM Corner</a>
+                    <a href="{{ route('dashboard') }}">
+                        <div class="text-base sm:text-lg font-bold text-[#A61819] leading-tight">
+                            <span class="block whitespace-nowrap">Spiritual Group Therapy Diabetes</span>
+                            <span class="block whitespace-nowrap">
+                                Mellitus Corner
+                                <span class="text-sm text-slate-600 font-large">(SGT DM Corner)</span>
+                            </span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="hidden md:flex md:items-center">
                     <div class="flex items-baseline space-x-4">
-                        <a href="{{ route('pendahuluan') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pengertian</a>
-                        <a href="{{ route('video') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Video</a>
-                        <a href="{{ route('laporan-aktivitas.index') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Laporan Aktivitas</a>
-                        <a href="{{ route('laporan-gula-darah.index') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Laporan Gula Darah</a>
-                        <a href="{{ route('artikel') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Artikel</a>
+                        <a href="{{ route('dashboard') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-1 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="{{ route('pendahuluan') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-1 py-2 rounded-md text-sm font-medium">Pengertian</a>
+                        <a href="{{ route('video') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-1 py-2 rounded-md text-sm font-medium">Video</a>
+                        <a href="{{ route('laporan-aktivitas.index') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-1 py-2 rounded-md text-sm font-medium">Laporan Aktivitas</a>
+                        <a href="{{ route('laporan-gula-darah.index') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-1 py-2 rounded-md text-sm font-medium">Laporan Gula Darah</a>
+                        <a href="{{ route('artikel') }}" class="text-slate-600 hover:bg-[#A61819] hover:text-white px-1 py-2 rounded-md text-sm font-medium">Artikel</a>
                     </div>
 
                     @auth
@@ -70,6 +77,7 @@
 
         <div x-show="open" x-collapse class="md:hidden" id="mobile-menu">
             <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                <a href="{{ route('dashboard') }}" class="text-gray-700 hover:bg-[#A61819] hover:text-white block rounded-md px-3 py-2 text-base font-medium">Dashboard</a>
                 <a href="{{ route('pendahuluan') }}" class="text-gray-700 hover:bg-[#A61819] hover:text-white block rounded-md px-3 py-2 text-base font-medium">Pengertian</a>
                 <a href="{{ route('video') }}" class="text-gray-700 hover:bg-[#A61819] hover:text-white block rounded-md px-3 py-2 text-base font-medium">Video</a>
                 <a href="{{ route('laporan-aktivitas.index') }}" class="text-gray-700 hover:bg-[#A61819] hover:text-white block rounded-md px-3 py-2 text-base font-medium">Laporan Aktivitas</a>

@@ -24,10 +24,8 @@
             }
         </style>
     </head>
-    {{-- MENGUBAH BAGIAN INI --}}
     <body class="bg-[#E8E8DF] flex items-center justify-center min-h-screen">
         <div>
-            {{-- Slot ini akan diisi oleh konten dari login.blade.php --}}
             {{ $slot }}
         </div>
     </body>

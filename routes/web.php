@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ActivityReportController;
 use App\Http\Controllers\BloodSugarReportController;
+use App\Http\Controllers\ArticleController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -17,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/pendahuluan', [DashboardController::class, 'pendahuluan'])->name('pendahuluan');
     Route::get('/video', [DashboardController::class, 'video'])->name('video');
-    Route::get('/artikel', [DashboardController::class, 'artikel'])->name('artikel');
+    Route::get('/artikel', [ArticleController::class, 'index'])->name('artikel');
 
     // Resourceful routes untuk laporan (CRUD)
     Route::resource('laporan-aktivitas', ActivityReportController::class);

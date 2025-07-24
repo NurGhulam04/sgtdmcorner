@@ -120,8 +120,56 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
+        @if($bloodSugarReports->count() > 1)
+        <div class="mt-12 bg-white p-8 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">Perkembangan Gula Darah Anda</h2>
+                <div class="relative h-80 w-full">
+                    <canvas id="bloodSugarChart"></canvas>
+                </div>
+        </div>
+        @endif
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    @if(isset($chartLabels) && isset($chartData))
+        const labels = @json($chartLabels);
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Kadar Gula Darah (mg/dL)',
+                backgroundColor: 'rgba(166, 24, 25, 0.2)',
+                borderColor: '#A61819',
+                data: @json($chartData),
+                fill: true,
+                tension: 0.1
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        const myChart = new Chart(
+            document.getElementById('bloodSugarChart'),
+            config
+        );
+    @endif
+</script>
+@endpush
