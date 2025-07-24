@@ -10,7 +10,7 @@
                     Selamat Datang, di web DM kami!
                 </h1>
                 <p class="text-lg mt-2 max-w-2xl">
-                    Semoga sehat selalu. Apa yang ingin Anda lakukan hari ini?
+                    SGT DM Corner adalah web app yang dapat membantu anda mencatat dan memantau kadar gula darah dan aktivitas fisik Anda.
                 </p>
             </div>
         </section>

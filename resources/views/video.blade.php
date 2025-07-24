@@ -40,11 +40,17 @@
                         <div class="p-5 pt-0" x-show="open === {{ $index + 1 }}" x-collapse>
                             <div class="border-t border-gray-200 pt-5">
                                 <div class="aspect-w-16 aspect-h-9">
-                                    <iframe
-                                        src="{{ $video['url'] }}"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen
+                                    @php
+                                        // Mengambil bagian terakhir dari URL, yaitu ID video
+                                        $urlParts = explode('/', $video['url']);
+                                        $videoId = end($urlParts);
+                                    @endphp
+
+                                    {{-- PERBAIKAN: Menggunakan format URL embed yang benar --}}
+                                    <iframe src="https://www.youtube.com/embed/{{ $videoId }}"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen
                                         class="rounded-lg shadow-lg w-full h-full"
                                     ></iframe>
                                 </div>
